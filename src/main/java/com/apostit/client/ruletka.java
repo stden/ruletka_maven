@@ -9,7 +9,10 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Document;
@@ -132,8 +135,11 @@ public class ruletka implements EntryPoint {
     }
 
     private void commonInterface() {
-        Document.get().setTitle(x.appTitle()); // Set the document title
-        RootPanel.get("appTitle").add(new HTML(x.appTitle()));
+        Document.get().setTitle(x.appTitle());
+        RootPanel appTitlePanel = RootPanel.get("appTitle");
+        if (appTitlePanel != null) {
+            appTitlePanel.add(new HTML(x.appTitle()));
+        }
         RootPanel.get("category").add(new HTML(x.category()));
         RootPanel.get("fromCountryLabel").add(new HTML(x.fromCountryLabel()));
         RootPanel.get("toCountryLabel").add(new HTML(x.toCountryLabel()));
