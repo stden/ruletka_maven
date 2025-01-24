@@ -69,6 +69,9 @@
                     <runTarget>ruletka.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <i18nMessagesBundle>com.apostit.client.Messages</i18nMessagesBundle>
+                    <bindAddress>0.0.0.0</bindAddress>
+                    <port>8080</port>
+                    <codeServerPort>9876</codeServerPort>
                 </configuration>
             </plugin>
 
