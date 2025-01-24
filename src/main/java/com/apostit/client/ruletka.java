@@ -16,7 +16,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class ruletka implements EntryPoint {
-    public Messages x = GWT.create(Messages.class);
+    public Messages x = (Messages) GWT.createNow(Messages.class);
     private RootPanel result;
     private RootPanel fromCountryPanel;
     private RootPanel toCountryPanel;
