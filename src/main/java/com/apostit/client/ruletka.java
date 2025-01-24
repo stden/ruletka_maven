@@ -17,11 +17,11 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class ruletka implements EntryPoint {
     public Messages x = GWT.create(Messages.class);
-    private RootPanel result;
-    private RootPanel fromCountryPanel;
-    private RootPanel toCountryPanel;
-    private RootPanel fromValuePanel;
-    private RootPanel help;
+    private RootLayoutPanel result;
+    private RootLayoutPanel fromCountryPanel;
+    private RootLayoutPanel toCountryPanel;
+    private RootLayoutPanel fromValuePanel;
+    private RootLayoutPanel help;
     private ListBox selectCategory;
     private ListBox countryFrom;
     private ListBox countryTo;
@@ -51,7 +51,11 @@ public class ruletka implements EntryPoint {
 
         converter = new Converter(x);
 
-        RootPanel categoryContainer = RootPanel.get("categoryContainer");
+        RootLayoutPanel categoryContainer = RootLayoutPanel.get();
+        Element categoryElement = Document.get().getElementById("categoryContainer");
+        if (categoryElement != null) {
+            categoryContainer.add(new HTML(categoryElement.getInnerHTML()));
+        }
         selectCategory = createListBox(converter.getCategory());
         categoryContainer.add(selectCategory);
 
