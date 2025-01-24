@@ -10,7 +10,9 @@ import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.dom.client.Style.Unit;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -53,7 +55,9 @@ public class ruletka implements EntryPoint {
 
         RootPanel categoryContainer = RootPanel.get("categoryContainer");
         selectCategory = createListBox(converter.getCategory());
-        categoryContainer.add(selectCategory);
+        if (categoryContainer != null) {
+            categoryContainer.add(selectCategory);
+        }
 
         fromCountryPanel = RootPanel.get("fromCountry");
         toCountryPanel = RootPanel.get("toCountry");
