@@ -6,3 +6,11 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "mvn gwt:run -Dgwt.superDevMode=true"]
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 9876
+externalPort = 80
