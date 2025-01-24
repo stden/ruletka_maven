@@ -70,14 +70,13 @@
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <i18nMessagesBundle>com.apostit.client.Messages</i18nMessagesBundle>
                     <bindAddress>0.0.0.0</bindAddress>
+                    <port>8080</port>
+                    <codeServerPort>9876</codeServerPort>
                     <noServer>false</noServer>
-                    <port>8080</port>
-                    <codeServerPort>9876</codeServerPort>
-                    <noPrecompile>true</noPrecompile>
+                    <strict>true</strict>
                     <style>DETAILED</style>
-                    <bindAddress>0.0.0.0</bindAddress>
-                    <port>8080</port>
-                    <codeServerPort>9876</codeServerPort>
+                    <logLevel>INFO</logLevel>
+                    <draftCompile>true</draftCompile>
                 </configuration>
             </plugin>
 
